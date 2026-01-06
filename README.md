@@ -19,13 +19,13 @@ This document tracks all the MERN stack learning tasks with their respective vid
 - [X] **Task 2658**: Formatting tags in HTML
 - [X] **Task 2663**: How to create tables in HTML document
 - [X] **Task 2668**: Different types of lists
-- [X] **Task 2673**: Introduction to iFrames
+- [X] **Task 2673**: Introduction to iframes
 - [X] **Task 2678**: Adding audio and video files to html document
 - [X] **Task 2924**: Basic tags
 - [X] **Task 2939**: Lists In HTML
 - [X] **Task 2945**: Representation of data in tabular format
 - [X] **Task 2951**: Embedding Multi-media files
-- [X] **Task 2957**: iFrames
+- [X] **Task 2957**: iframes
 
 ### CSS Fundamentals
 
@@ -194,7 +194,7 @@ Create an ordered list of top 3 books:
 
 ---
 
-#### Task 2673: Introduction to iFrames
+#### Task 2673: Introduction to iframes
 
 **Video Link**: [Watch Recording](https://drive.google.com/file/d/1_7_Q5Q16QEkpmIx3PzzOH25cCvA6SxMc/view?usp=sharing)
 
@@ -308,7 +308,7 @@ Create a video player with:
 
 ---
 
-#### Task 2957: iFrames
+#### Task 2957: iframes
 
 **Video Link**: [Watch Recording](https://drive.google.com/file/d/1_7_Q5Q16QEkpmIx3PzzOH25cCvA6SxMc/view?usp=sharing)
 

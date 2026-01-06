@@ -58,7 +58,7 @@ The videos are organized into 6 main categories:
 2. **HTML Basics** (10 videos)
    - Formatting tags
    - Tables and lists
-   - iFrames
+   - iframes
    - Multimedia files
 
 3. **CSS Fundamentals** (11 videos)

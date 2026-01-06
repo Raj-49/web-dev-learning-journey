@@ -104,7 +104,7 @@ function openVideoModal(video) {
     const modalTitle = document.getElementById('modalTitle');
     const modalTaskId = document.getElementById('modalTaskId');
     const modalDescription = document.getElementById('modalDescription');
-    const modalIframe = document.getElementById('modalIframe');
+    const modaliframe = document.getElementById('modaliframe');
     
     modalTitle.textContent = video.title;
     modalTaskId.textContent = `Task #${video.taskId}`;
@@ -112,7 +112,7 @@ function openVideoModal(video) {
     
     // Convert drive link to embeddable format
     const embedLink = convertToEmbedLink(video.driveLink);
-    modalIframe.src = embedLink;
+    modaliframe.src = embedLink;
     
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
@@ -121,10 +121,10 @@ function openVideoModal(video) {
 // Close modal
 function closeModal() {
     const modal = document.getElementById('videoModal');
-    const modalIframe = document.getElementById('modalIframe');
+    const modaliframe = document.getElementById('modaliframe');
     
     modal.style.display = 'none';
-    modalIframe.src = ''; // Stop video playback
+    modaliframe.src = ''; // Stop video playback
     document.body.style.overflow = 'auto'; // Re-enable scrolling
 }
 

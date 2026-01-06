@@ -58,7 +58,7 @@ const videoData = [
     },
     {        serial: 9,
         taskId: 2673,
-        title: "Introduction to iFrames",
+        title: "Introduction to iframes",
         driveLink: "https://drive.google.com/file/d/1_7_Q5Q16QEkpmIx3PzzOH25cCvA6SxMc/view?usp=sharing",
         description: "Embed external websites and content using iframes. Learn iframe sizing and alignment.",
         category: "html"
@@ -100,7 +100,7 @@ const videoData = [
     },
     {        serial: 15,
         taskId: 2957,
-        title: "iFrames",
+        title: "iframes",
         driveLink: "https://drive.google.com/file/d/1_7_Q5Q16QEkpmIx3PzzOH25cCvA6SxMc/view?usp=sharing",
         description: "Embed PDF files and external documents using iframes with scrolling and resizing.",
         category: "html"
