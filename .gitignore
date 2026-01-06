@@ -48,3 +48,9 @@ temp/
 # Cache files
 .cache/
 .parcel-cache/
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.wmv
