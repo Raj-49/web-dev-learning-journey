@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>favicon</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="/8 - 15 Task (Html)/resoources/image.png" />
+    <style>
+        td,
+        th {
+            border: 1px solid red;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Html lists -->
+    <div class="html-lists">
+        <!-- Ordered List -->
+        <h2>Ordered List</h2>
+        <ol type="A">
+            <li>First Item</li>
+            <li>
+                Second Item
+                <ol type="i">
+                    <li>Subitem One</li>
+                    <li>Subitem Two</li>
+                </ol>
+            </li>
+            <li>Third Item</li>
+        </ol>
+
+        <!-- Unordered List -->
+        <h2>Unordered List</h2>
+        <ul type="circle">
+            <li>Item One</li>
+            <li>
+                Item Two
+                <ul type="square">
+                    <li>Subitem A</li>
+                    <li>Subitem B</li>
+                </ul>
+            </li>
+            <li>Item Three</li>
+        </ul>
+
+        <!-- description list -->
+        <h2>Description List</h2>
+        <dl>
+            <dt>HTML</dt>
+            <dd>A markup language for creating web pages.</dd>
+            <dt>CSS</dt>
+            <dd>
+                A style sheet language used for describing the presentation of a
+                document.
+            </dd>
+            <dt>JavaScript</dt>
+            <dd>A programming language commonly used in web development.</dd>
+        </dl>
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- Html form -->
+    <div class="html-form">
+        <h2>HTML Form</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" required /><br /><br />
+
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" required /><br /><br />
+
+            <label for="password">Password:</label><br />
+            <input type="password" id="password" name="password" required /><br /><br />
+
+            <label for="dob">Date of Birth:</label><br />
+            <input type="date" id="dob" name="dob" required /><br /><br />
+
+            <label for="gender">Gender:</label><br />
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label><br /><br />
+
+            <label for="country">Country:</label><br />
+            <select id="country" name="country" required>
+                <option value="">--Please choose an option--</option>
+                <option value="india">India</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="australia">Australia</option>
+            </select><br /><br />
+
+            <label for="comments">Comments:</label><br />
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br /><br />
+
+            <label for="hobby">hobby:</label><br />
+            <input type="checkbox" id="reading" name="hobby" value="reading" />
+            <label for="reading">Reading</label><br />
+            <input type="checkbox" id="traveling" name="hobby" value="traveling" />
+            <label for="traveling">Traveling</label><br />
+            <input type="checkbox" id="gaming" name="hobby" value="gaming" />
+            <label for="gaming">Gaming</label><br />
+            <input type="checkbox" id="coding" name="hobby" value="coding" />
+            <label for="coding">Coding</label><br />
+            <br />
+
+            <label for="favcolor">Favorite Color:</label><br />
+            <input type="color" id="favcolor" name="favcolor" value="#ff0000" /><br /><br />
+
+            <input type="file" id="imageupload" name="imageupload" accept="image/*" /><br /><br />
+
+            <input type="image" src="/resoources/table.png" alt="Submit" width="48"
+                height="48" /><br /><br />
+
+            <input type="number" id="quantity" name="quantity" min="20" max="50"><br /><br />
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}"><br><br>
+
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <!-- Audio and Video -->
+    <div>
+        <h2>Audio and Video</h2>
+        <h3>Audio Example</h3>
+        <audio controls>
+            <source src="/resoources/courtesy call.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Video Example</h3>
+        <video width="320" height="240" controls>
+            <source src="/resoources/Screen Recording 2025-10-04 183920.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Iframe -->
+    <div class="iframe">
+        <iframe src="https://dogpile.com" frameborder="2" width="1100" height="1000" name="iframe"></iframe>
+
+        <a href="https://wikipedia.org" target="iframe"><img src="/resoources/image.png" alt=""></a>
+    </div>
+
+    <!-- table -->
+    <div class="table" style="margin-top: 100px;">
+        <table
+            style="border: 3px solid red; width: 80%; height: 400px; margin: auto; text-align: center; border-collapse: collapse;">
+            <tr>
+                <td style="padding: 10px; width: 70%;">
+                    <table style="border: 1px solid yellow ; width: 100%; height: 100%;">
+                        <tr>
+                            <td colspan="2">Nested Table 1</td>
+                        </tr>
+                        <tr>
+                            <td>Column 1</td>
+                            <td>Column 2</td>
+                        </tr>
+                        <tr>
+                            <td>Our first table</td>
+                            <td> Nested within</td>
+                        </tr>
+
+                    </table>
+
+                </td>
+                <td style="padding: 10px;">
+                    <table style="border: 1px solid rgb(0, 123, 255) ; width: 100%; height: 100%;">
+                        <tr>
+                            <td colspan="2">Nested Table 2</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>First Item</li>
+                                    <li>Second Item</li>
+                                    <li>Third Item</li>
+                                </ul>
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 10px;">
+                    <table style="border: 1px solid rgb(214, 214, 206) ; width: 100%; height: 100%;">
+                        <tr>
+                            <td colspan="2">Nested Table 3</td>
+                        </tr>
+                        <tr>
+                            <td><a href="example.com">Nested Table</a></td>
+                            <td>Demo Continued</td>
+                        </tr>
+
+                    </table>
+
+                </td>
+                <td style="padding: 10px;">
+                    <table style="border: 1px solid rgb(0, 255, 94) ; width: 100%; height: 100%;">
+                        <tr>
+                            <td>Nested Table 4</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; vertical-align: middle;">
+                                <img src="/resoources/image.png" alt="Image" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

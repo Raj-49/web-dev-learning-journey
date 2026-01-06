@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERN Learning Videos - All in One Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎥 MERN Stack Learning Videos</h1>
+            <p class="subtitle">All your learning resources in one place</p>
+            <div class="stats">
+                <span class="stat-item">📚 <strong id="totalVideos">44</strong> Videos</span>
+                <span class="stat-item">⏱️ Complete Learning Path</span>
+            </div>
+        </header>
+
+        <!-- Search and Filter Section -->
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="🔍 Search by task name or ID..." class="search-box">
+            <select id="categoryFilter" class="filter-select">
+                <option value="all">All Categories</option>
+                <option value="fundamentals">Web Development Fundamentals</option>
+                <option value="html">HTML Basics</option>
+                <option value="css">CSS Fundamentals</option>
+                <option value="javascript">JavaScript Essentials</option>
+                <option value="react">React & Advanced</option>
+                <option value="nodejs">Node.js</option>
+            </select>
+        </div>
+
+        <!-- Video Grid -->
+        <div id="videoGrid" class="video-grid">
+            <!-- Videos will be loaded here dynamically -->
+        </div>
+
+        <!-- Video Modal -->
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-body">
+                    <iframe id="modalIframe" src="" frameborder="0" allowfullscreen></iframe>
+                    <div class="modal-info">
+                        <h2 id="modalTitle"></h2>
+                        <p id="modalTaskId"></p>
+                        <p id="modalDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="videoData.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

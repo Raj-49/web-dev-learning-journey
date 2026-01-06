@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Patel - MERN Learning Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .company-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .intern-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h2 {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .video-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 20px 0;
+        }
+
+        .video-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-divider {
+            margin: 50px 0 30px;
+            text-align: center;
+        }
+
+        .section-divider h3 {
+            font-size: 1.8em;
+            color: #764ba2;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-divider h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .section-description {
+            color: #666;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .projects-section h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .project-card h3 {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .task-header {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .project-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .dual-number {
+            display: flex;
+            gap: 5px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .dual-number .number-badge {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* More Links Section */
+        .more-links {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .more-links p {
+            font-size: 1.1em;
+            font-style: italic;
+            color: black;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero h2 {
+                font-size: 1.2em;
+            }
+
+            .projects-section h2 {
+                font-size: 2em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <!-- Company Logo -->
+            <img src="/resoources/logo.png" alt="BrainlyBeams Logo" class="company-logo">
+            
+          
+            
+            <h1>👋 Hi, I'm Raj Patel</h1>
+            <h2>MERN Developer Intern at BrainlyBeams</h2>
+            <p>
+                Welcome to my internship learning journey! I'm currently working as a  MERN Developer intern at <strong>BrainlyBeams</strong>, 
+                where I'm diving deep into the MERN stack (MongoDB, Express.js, React, Node.js) through hands-on projects and real-world applications.
+            </p>
+            <p>
+                This portfolio showcases my progress during my internship as I learn web development fundamentals, from basic HTML/CSS to advanced 
+                full-stack applications. Each project below represents different concepts and techniques I've mastered through structured tasks 
+                and mentorship at BrainlyBeams.
+            </p>
+            <p>
+                I'm documenting my entire learning process through video tutorials and practical tasks to help others on their journey.
+            </p>
+            <a href="https://video.rajpatel.fun" target="_blank" class="video-link" rel="noopener noreferrer">
+                MERN Tutorial Videos & Tasks
+            </a>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <h2>� My Work at BrainlyBeams</h2>
+            
+            <!-- PROJECTS -->
+            <div class="section-divider">
+                <h3>🚀 Projects</h3>
+                <p class="section-description">Complete applications built during my internship</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 - Video Viewer App -->
+                <a href="video-viewer-app/index.html" class="project-card">
+                    <h3>MERN Learning Video Viewer</h3>
+                    <p>A single-page web application to browse all 44+ MERN learning videos with smart search, category filters, video preview modal, and responsive design. Integrated with Google Drive.</p>
+                </a>
+            </div>
+
+            <!-- PRACTICE TASKS -->
+            <div class="section-divider">
+                <h3>📝 Practice Tasks</h3>
+                <p class="section-description">Hands-on exercises to master web development fundamentals</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Task 1-5 Theory -->
+                <a href="#" class="project-card" style="pointer-events: none; opacity: 0.85;">
+                    <div class="task-header">Tasks 1-5</div>
+                    <h3>Web Development Fundamentals</h3>
+                    <p>Theoretical foundation: Overview of web development, version control with Git & GitHub, SDLC phases, and React framework introduction. Covered in detailed video tutorials.</p>
+                </a>
+
+                <!-- Task 6 -->
+                <!-- Task 6 -->
+                <a href="6. Formatting tags in HTML/index.html" class="project-card">
+                    <div class="task-header">Task 6</div>
+                    <h3>Formatting Tags in HTML</h3>
+                    <p>Practiced text formatting with centered paragraphs, blockquotes for famous quotes, author attribution using &lt;small&gt; tag, and scientific notation with subscript/superscript (H₂O, E=mc²).</p>
+                </a>
+
+                <!-- Task 7 -->
+                <a href="7. Tables in HTML document/table1.html" class="project-card">
+                    <div class="task-header">Task 7</div>
+                    <h3>Tables in HTML</h3>
+                    <p>Created structured data tables with borders, headers (Product, Price, Quantity), multiple rows of sample data, and proper table formatting for cricket player statistics.</p>
+                </a>
+
+                <!-- Task 8-15 -->
+                <a href="8 - 15 Task (Html)/index.html" class="project-card">
+                    <div class="task-header">Tasks 8-15</div>
+                    <h3>HTML Fundamentals</h3>
+                    <p>Comprehensive HTML practice: ordered/unordered lists with nested structures, description lists, HTML forms with various input types, embedding audio/video files, iframes for external content, and complex nested tables.</p>
+                </a>
+
+                <!-- Task 16-25 -->
+                <a href="16 - 25 (CSS)/index.html" class="project-card">
+                    <div class="task-header">Tasks 16-25</div>
+                    <h3>CSS Fundamentals</h3>
+                    <p>CSS box model visualization (margin, border, padding, content), striped table styling with alternating row colors, hyperlink states with validation indicators, and custom list designs with circular/square badges and curved connectors.</p>
+                </a>
+            </div>
+
+            <!-- More Links Placeholder -->
+            <div class="more-links" >
+                <p>✨ More projects and tasks coming soon as I continue my learning journey at BrainlyBeams... ✨</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Raj Patel | Mern Developer Intern at BrainlyBeams</p>
+        </footer>
+    </div>
+</body>
+</html>

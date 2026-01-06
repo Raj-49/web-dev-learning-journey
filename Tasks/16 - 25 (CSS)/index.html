@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .backgrouund {
+            width: auto;
+            height: auto;
+            background-color: rgb(0, 38, 255);
+            padding: 100px 200px 150px 250px;
+            margin-top: 300px;
+            /* display: inline-block; */
+        }
+
+        .margin {
+            padding: 0px 30px 30px 30px;
+            background-color: rgb(0, 229, 255);
+
+        }
+
+        .border {
+            padding: 0px 30px 30px 30px;
+            background-color: rgb(255, 140, 0);
+
+        }
+
+        .padding {
+            padding: 0px 30px 30px 30px;
+            background-color: rgb(0, 38, 255);
+
+        }
+
+        .content {
+            width: 500px;
+            height: 100px;
+            border: none;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        hr {
+            border: 3px solid black;
+            width: 100%;
+        }
+
+        .table tr,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .link div {
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 60vw;
+            height: 25px;
+            display: block;
+            border-radius: 100px;
+        }
+
+        .link a:nth-child(1) {
+            color: black;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        .list li {
+            list-style: none;
+        }
+
+        .circle {
+            position: relative;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            min-width: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: rgb(115, 213, 240);
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .circle-item {
+            position: relative;
+            flex: 1;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 20px;
+            background-color: rgb(226, 224, 224);
+            font-size: 18px;
+            color: #555;
+            z-index: -1;
+        }
+
+        .circle-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 0 100px 100px 0;
+            /* border: #555 1px solid; */
+        }
+
+        .square {
+            position: relative;
+            height: 50px;
+            width: 50px;
+            min-width: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: rgb(240, 138, 115);
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .square::after {
+            content: '';
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid rgb(240, 138, 115);
+        }
+
+        .square-item {
+            flex: 1;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 20px;
+            background-color: rgb(226, 224, 224);
+            font-size: 18px;
+            color: #555;
+        }
+
+        .style-text {
+            position: relative;
+            font-size: 100px;
+            font-weight: 1000;
+            color: rgb(255, 90, 117);
+            /* MAIN TEXT */
+            z-index: 2;
+        }
+
+        /* GREY SHADOW — separate layer */
+        .style-text::after {
+            content: attr(data-text);
+            position: absolute;
+            inset: 0;
+
+            color: rgb(255, 90, 117);
+            text-shadow: 10px 10px 2px grey;
+
+            z-index: 1;
+        }
+
+        /* BLUE OUTLINE — top layer */
+        .style-text::before {
+            content: attr(data-text);
+            position: absolute;
+            inset: 0;
+
+            color: transparent;
+            -webkit-text-stroke: 2px white;
+
+            transform: translate(-7px, -7px);
+            z-index: 3;
+
+            pointer-events: none;
+        }
+
+        .style-text2 {
+            font-size: 75px;
+            color: rgb(255, 255, 255);
+            text-shadow: 0px 0px 4px #2600ff, 0px 0px 8px #2600ff, 0px 0px 15px #000000;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        .style-text3 {
+            font-size: 75px;
+            color: rgb(255, 255, 255);
+            text-shadow: 0px 8px 9px #000000;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: flex; flex-direction: column; align-items: center; ">
+        <div class="backgrouund" style="margin-top: 50px;">
+            <table>
+                <tr>
+                    <td colspan="3"
+                        style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white; padding-bottom: 20px; font-size: large;">
+                        TOP</td>
+                </tr>
+                <tr>
+                    <td
+                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white; padding-right: 50px; font-size: large;">
+                        LEFT</td>
+                    <td>
+                        <div class="margin">
+                            <div style="margin: 0px; height: 30px; line-height: 30px;">MARGIN</div>
+                            <div class="border">
+                                <div style="margin: 0px; height: 30px; line-height: 30px;">BORDER</div>
+                                <div class="padding">
+                                    <div style="margin: 0px; height: 30px; line-height: 30px;">PADDING</div>
+                                    <div class="content">
+                                        CONTENT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td
+                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white; padding-left: 25px; font-size: large;">
+                        RIGHT</td>
+                </tr>
+                <tr>
+                    <td colspan="3"
+                        style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white; padding-top: 20px; font-size: large;"">BOTTOM</td>
+            </tr>
+        </table>
+        </div>
+
+        <br><hr><br><hr><br>
+
+        <div>
+
+            <div style=" text-align: center; margin-bottom: 50px;">
+                        <h2>Striped table</h2>
+        </div>
+        <table class="table"
+            style="border: 2px solid black; height: 200px; width: 70vw; margin-bottom: 50px; border-collapse: collapse;">
+            <tr style="background-color: darkgray;">
+                <td>Rank</td>
+                <td>Name</td>
+                <td>Runs</td>
+                <td>Centuries</td>
+                <td>Strike Rate</td>
+                <td>Avg</td>
+            </tr>
+            <tr style="background-color: white;">
+                <td>1</td>
+                <td>Rohit</td>
+                <td>10000</td>
+                <td>29</td>
+                <td>97</td>
+                <td>55</td>
+            </tr>
+            <tr style="background-color: rgb(246, 246, 246);">
+                <td>2</td>
+                <td>Virat</td>
+                <td>12000</td>
+                <td>40</td>
+                <td>91</td>
+                <td>49</td>
+            </tr>
+            <tr style="background-color: white;">
+                <td>3</td>
+                <td>Rahul</td>
+                <td>5000</td>
+                <td>8</td>
+                <td>85</td>
+                <td>45</td>
+            </tr>
+            <tr style="background-color: rgb(246, 246, 246) ;">
+                <td>4</td>
+                <td>Rishabh</td>
+                <td>4000</td>
+                <td>2</td>
+                <td>8</td>
+                <td>39</td>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <br>
+    <hr><br>
+    <hr><br>
+
+    <div class="link">
+        <div style="border: 2px solid cyan; box-shadow: 0 4px 8px -4px cyan;"><a href="">&#x2717;&emsp;This is a link
+                without a link</a></div>
+
+        <div style="background-color: rgb(255, 177, 177); border: 2px solid red; box-shadow: 0 4px 8px -4px red;"><a
+                href="" target="_blank">&#x2717;&emsp; This is a link without a link with a target blank</a></div>
+
+        <div style="background-color: rgb(199, 255, 255); border: 2px solid cyan; box-shadow: 0 4px 8px -4px cyan;"><a
+                href="www.google.com" target="_blank" noopener>&checkmark;&emsp;This is a link a link with a target
+                blank and noopener</a></div>
+
+        <div style="background-color:rgb(201, 255, 201); border: 2px solid green; box-shadow: 0 4px 8px -4px green;"><a
+                href="https://www.example.com">&checkmark;&emsp;This is a default link</a></div>
+
+        <div
+            style="background-color: rgb(238, 255, 187); border: 2px solid yellowgreen; box-shadow: 0 4px 8px -4px yellowgreen;">
+            <a href="#">&checkmark;&emsp; This is an internal link</a>
+        </div>
+
+        <div style="background-color: rgb(191, 191, 255); border: 2px solid blue; box-shadow: 0 4px 8px -4px blue;"><a
+                href="https://www.google.com" target="_blank" rel="noopener noreferrer">&checkmark;&emsp; This external
+                link</a></div>
+
+        <div style="background-color: rgb(255, 230, 182); border: 2px solid orange; box-shadow: 0 4px 8px -4px orange;">
+            <a href="https://www.example.com" target="_blank">&#x2717;&emsp; External link without noopener with target
+                blank</a>
+        </div>
+
+        <div style="background-color: rgb(255, 200, 255); border: 2px solid violet; box-shadow: 0 4px 8px -4px violet;">
+            <a href="https://www.wikipedia.org" target="_blank" rel="noopener noreferrer">&checkmark;&emsp; External in
+                new window like it should be</a>
+        </div>
+    </div>
+
+    <br>
+    <hr><br>
+    <hr><br>
+
+    <div class="list"
+        style="display: flex; flex-direction: row; align-items: flex-start; gap: 50px; margin-bottom: 50px; width: 80vw;">
+        <!-- Blue Circle List (Left Side) -->
+        <div style="flex: 1;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <div style="display: flex; align-items: center; gap: 0px; margin-bottom: 10px;">
+                        <div class="circle">
+                            1
+                        </div>
+                        <div class="circle-item">
+                            List item
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: flex; align-items: center; gap: 0px; margin-bottom: 10px;">
+                        <div class="circle">
+                            2
+                        </div>
+                        <div class="circle-item">
+                            List item
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: flex; align-items: center; gap: 0px; margin-bottom: 10px;">
+                        <div class="circle">
+                            3
+                        </div>
+                        <div class="circle-item">
+                            List item
+                        </div>
+                    </div>
+                    <!-- Sub Item -->
+                    <ul style="list-style: none; padding: 0; margin: 10px 0 0 65px;">
+                        <li>
+                            <div style="display: flex; align-items: center; gap: 0px;">
+                                <div class="circle">
+                                    1
+                                </div>
+                                <div class="circle-item">
+                                    List sub item
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Red Square List (Right Side) -->
+        <div style="flex: 1;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                        <div class="square">
+                            1
+                        </div>
+                        <div class="square-item">
+                            List item
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                        <div class="square">
+                            2
+                        </div>
+                        <div class="square-item">
+                            List item
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                        <div class="square">
+                            3
+                        </div>
+                        <div class="square-item">
+                            List item
+                        </div>
+                    </div>
+                    <!-- Sub Item -->
+                    <ul style="list-style: none; padding: 0; margin: 10px 0 0 65px;">
+                        <li>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div class="square">
+                                    1
+                                </div>
+                                <div class="square-item">
+                                    List sub item
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <hr><br>
+    <hr><br>
+
+    <p>Box with out attribute width and height which helps create triangle</p>
+
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 10px; margin-bottom: 50px;">
+
+        <div style="border:15px solid red"></div>
+        <div style="border-top: 15px solid black;
+            border-bottom: 15px solid blue;
+            border-left: 15px solid rgb(240, 138, 115) ;
+            border-right: 15px solid violet;">
+        </div>
+        <div style="border-top: 15px solid black;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid transparent ;
+            border-right: 15px solid transparent;">
+        </div>
+        <div style="border-top: 15px solid transparent;
+            border-bottom: 15px solid blue;
+            border-left: 15px solid transparent ;
+            border-right: 15px solid transparent;">
+        </div>
+        <div style="border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid rgb(240, 138, 115) ;
+            border-right: 15px solid transparent;">
+        </div>
+        <div style="border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid transparent ;
+            border-right: 15px solid violet;">
+        </div>
+
+    </div>
+
+    <br>
+    <hr><br>
+    <hr><br>
+
+    <div>
+        <p style="text-shadow: 0px 0px 8px rgb(255, 0, 0); color: red; font-size: 21px;">This is Glowing text</p>
+    </div>
+
+    <div style="width: auto;  padding: 50px; background-color: rgb(0, 0, 129);">
+        <p class="style-text" data-text="UI DESIGN">
+            UI DESIGN
+        </p>
+    </div>
+
+    <div>
+        <p class="style-text2">Text-Shadow effect!</p>
+    </div>
+
+    <div>
+        <p class="style-text3">Text-Shadow effect!</p>
+    </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

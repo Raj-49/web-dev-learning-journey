@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table in HTML Document</title>
+    <link rel="stylesheet" href="/16 - 25 (CSS)/table.css">
+</head>
+<body>
+    <h1>Quarterly Sales Report 2026 - Q1</h1>
+    
+    <!-- Complex table demonstrating ALL table tags -->
+    <table>
+        <!-- CAPTION TAG: Table title -->
+        <caption>
+            TechStore Inc. - Product Sales Analysis (January - March 2026)
+        </caption>
+        
+        <!-- COLGROUP and COL TAGS: Column grouping and styling -->
+        <colgroup>
+            <col style="background-color: #f0f0f0; width: 5%;">
+            <col class="col-product" span="2">
+            <col class="col-numbers" span="3">
+            <col style="background-color: #e6ffe6; width: 12%;">
+        </colgroup>
+        
+        <!-- THEAD TAG: Table header section -->
+        <thead>
+            <tr>
+                <!-- TH with SCOPE attribute for accessibility -->
+                <th scope="col" rowspan="2">#</th>
+                <th scope="col" rowspan="2">Product Name</th>
+                <th scope="col" rowspan="2">Category</th>
+                <th scope="colgroup" colspan="3">Monthly Sales (Units)</th>
+                <th scope="col" rowspan="2">Total Units</th>
+            </tr>
+            <tr>
+                <!-- Subheaders using COLSPAN demo from above -->
+                <th scope="col">January</th>
+                <th scope="col">February</th>
+                <th scope="col">March</th>
+            </tr>
+        </thead>
+        
+        <!-- TBODY TAG: Main table body with multiple tbody sections for grouping -->
+        
+        <!-- First tbody group: Electronics -->
+        <tbody>
+            <tr>
+                <th scope="row" colspan="7" style="background-color: #34495e; color: white; text-align: center;">
+                    ELECTRONICS DIVISION
+                </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <th scope="row" id="laptop" headers="product">Laptop Pro 15"</th>
+                <td>Computers</td>
+                <td>245</td>
+                <td>298</td>
+                <td>312</td>
+                <td><strong>855</strong></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <th scope="row" id="smartphone" headers="product">Smartphone X12</th>
+                <td>Mobile</td>
+                <td>478</td>
+                <td>523</td>
+                <td>601</td>
+                <td><strong>1,602</strong></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <th scope="row" id="tablet" headers="product">Tablet Air</th>
+                <td>Mobile</td>
+                <td>189</td>
+                <td>167</td>
+                <td>203</td>
+                <td><strong>559</strong></td>
+            </tr>
+            <!-- Subtotal row using COLSPAN -->
+            <tr style="background-color: #d5f4e6; font-weight: bold;">
+                <td colspan="3">Electronics Subtotal</td>
+                <td>912</td>
+                <td>988</td>
+                <td>1,116</td>
+                <td style="background-color: #27ae60; color: white;">3,016</td>
+            </tr>
+        </tbody>
+        
+        <!-- Second tbody group: Accessories -->
+        <tbody>
+            <tr>
+                <th scope="row" colspan="7" style="background-color: #34495e; color: white; text-align: center;">
+                    ACCESSORIES DIVISION
+                </th>
+            </tr>
+            <tr>
+                <td>4</td>
+                <th scope="row" id="headphones" headers="product">Wireless Headphones</th>
+                <td>Audio</td>
+                <td>356</td>
+                <td>402</td>
+                <td>445</td>
+                <td><strong>1,203</strong></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <th scope="row" id="charger" headers="product">Fast Charger 65W</th>
+                <td>Power</td>
+                <td>512</td>
+                <td>489</td>
+                <td>534</td>
+                <td><strong>1,535</strong></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <th scope="row" id="case" headers="product">Protective Case</th>
+                <td>Protection</td>
+                <td>623</td>
+                <td>578</td>
+                <td>651</td>
+                <td><strong>1,852</strong></td>
+            </tr>
+            <!-- Subtotal row using COLSPAN -->
+            <tr style="background-color: #d5f4e6; font-weight: bold;">
+                <td colspan="3">Accessories Subtotal</td>
+                <td>1,491</td>
+                <td>1,469</td>
+                <td>1,630</td>
+                <td style="background-color: #27ae60; color: white;">4,590</td>
+            </tr>
+        </tbody>
+        
+        <!-- Third tbody group: Special Items with ROWSPAN demonstration -->
+        <tbody>
+            <tr>
+                <th scope="row" colspan="7" style="background-color: #34495e; color: white; text-align: center;">
+                    SPECIAL PROMOTIONS
+                </th>
+            </tr>
+            <tr>
+                <td>7</td>
+                <th scope="row" id="bundle" headers="product">Mega Bundle Pack</th>
+                <td rowspan="2" style="vertical-align: middle; background-color: #fff3cd; font-weight: bold;">
+                    Limited Edition
+                </td>
+                <td>89</td>
+                <td>134</td>
+                <td>156</td>
+                <td><strong>379</strong></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <th scope="row" id="gaming" headers="product">Gaming Starter Kit</th>
+                <!-- This cell is spanned from above using rowspan -->
+                <td>67</td>
+                <td>92</td>
+                <td>108</td>
+                <td><strong>267</strong></td>
+            </tr>
+            <tr style="background-color: #d5f4e6; font-weight: bold;">    
+                <td colspan="3">Special Items Subtotal</td>
+                <td>156</td>
+                <td>226</td>
+                <td>264</td>
+                <td style="background-color: #27ae60; color: white;">646</td>
+            </tr>
+        </tbody>
+        
+        <!-- TFOOT TAG: Table footer with totals -->
+        <tfoot>
+            <tr>
+                <td colspan="3" class="grand-total">QUARTERLY GRAND TOTAL</td>
+                <td class="grand-total">2,559</td>
+                <td class="grand-total">2,683</td>
+                <td class="grand-total">3,010</td>
+                <td class="grand-total" style="background-color: #c0392b; font-size: 1.4em;">8,252</td>
+            </tr>
+            <tr>
+                <td colspan="7" class="note" style="text-align: center; padding: 10px;">
+                    Note: All figures represent units sold. Financial data available in separate report.
+                    Best performing month: March 2026 with 3,010 units sold.
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <div style="margin-top: 50px; text-align: center;">
+        <p style="margin: 20px; font-size: 20px;">table2.html</p>
+        <iframe src="/7. Tables in HTML document/table2.html" frameborder="2"></iframe>
+    </div>
+    
+</body>
+</html>
