@@ -1,0 +1,14 @@
+// Middleware — error handling middleware
+// Express calls this automatically when next(error) is called or an error occurs
+
+const errorHandler = (err, req, res, next) => {
+    console.error('❌ Error:', err.message);
+
+    const statusCode = err.statusCode || 500;
+    res.status(statusCode).json({
+        success: false,
+        message: err.message || 'Internal Server Error',
+    });
+};
+
+module.exports = errorHandler;

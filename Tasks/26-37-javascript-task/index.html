@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 26-37 - JavaScript Task</title>
+    <link rel="icon" type="image/x-icon" href="../../resources/raj-logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/raj-logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/raj-logo/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/resources/raj-logo/apple-touch-icon.png">
+</head>
+<body>
+    <p id="demo">
+        Hello World!
+    </p>        
+
+    <p id="demo-change">This text will be changed by JavaScript on clicking the button below.</p>
+
+    <button onclick="changeText()">Click Me</button> <br><br>
+
+    <button onclick="showComments()" >Click to see Commented Text</button> <br><br>
+
+    <button onclick="hideComments()">Click to hide Commented text</button> <br><br>
+     
+    
+   <div id="comments" style="display: none;">
+    <hr>
+    <p>
+        JavaScript Naming Conventions and Best Practices: <br>
+        <ul>
+            <li>naming convention for javascript variables and functions: camelCase
+                <ul><li>example: myVariableName, changeTextFunction</li></ul>
+            </li><br>
+            <li>best practice: use const and let instead of var
+                <ul><li>const for variables that won't be reassigned</li></ul>
+            </li><br>
+            <li>pascal case for class names: MyClassName
+                <ul><li>best practice: use semicolons at the end of statements</li></ul>
+            </li><br>
+            <li>snake case for file names: my_script_file.js
+                <ul><li>best practice: keep file names lowercase</li></ul>
+            </li><br>
+            <li>variable are start with letter, underscore(_), dollar sign($)
+                <ul><li>cannot start with number</li>
+                <li>cannot use reserved keywords as variable name</li></ul>
+            </li><br>
+        </ul>
+    </p>
+    <hr>
+    <p>
+        Data Types in JavaScript:  <br>
+        <ol>
+            <li>Primitive Data Types: This data types are immutable and hold single values.
+                <ul>
+                    <li>There are 7 primitive data types in JavaScript:</li>
+                    <li>Number : Integer, Float, etc.</li>
+                    <li>String : Text enclosed in single or double quotes</li>
+                    <li>Boolean : true or false</li>
+                    <li>Null : Represents intentional absence of any object value</li>
+                    <li>Undefined : Variable that has not been assigned a value</li>
+                    <li>Symbol : Unique and immutable data type used as identifier for object properties</li>
+                    <li>BigInt  : Represents integers with arbitrary precision</li>
+                </ul>
+            </li><br>
+            <li>Non-Primitive Data Types: This data types are mutable and can hold multiple values.
+                <ul>
+                    <li>There are 3 non-primitive data types in JavaScript:</li><br>
+                    <li>Object : Collection of key-value pairs
+                        <ul>
+                            <li>Example</li>
+                            <li>const person = {</li>
+                            <li>&nbsp;&nbsp;name: "John",</li>          
+                            <li>&nbsp;&nbsp;age: 30</li>
+                            <li>};</li>
+                        </ul>
+                    </li><br>
+                    <li>Array : Ordered list of values
+                        <ul>
+                            <li>Example</li>
+                            <li>const numbers = [1, 2, 3, 4, 5];</li>
+                        </ul>
+                    </li><br>
+                    <li>Function : Block of code designed to perform a particular task
+                        <ul>
+                            <li>Example</li>
+                            <li>function greet() {</li>
+                            <li>&nbsp;&nbsp;console.log("Hello, World!");</li>
+                            <li>}</li>
+                        </ul>
+                    </li><br>
+                </ul>
+            </li>
+        </ol>   
+    </p>
+    <hr>
+       
+    <p>
+        Type Casting in JavaScript: <br>
+        <ul>
+            <li>Type casting is the process of converting a value from one data type to another.</li><br>
+            <li>There are two types of type casting in JavaScript:</li><br>
+            <li>Implicit Type Casting: JavaScript automatically converts one data type to another when performing operations involving different data types.
+                <ul>
+                    <li>Example:</li>
+                    <li>let result = '5' + 10; // result will be '510' (string)</li>
+                </ul>
+            </li><br>
+            <li>Explicit Type Casting: The programmer manually converts a value from one data type to another using built-in functions.
+                <ul>
+                    <li>Example:</li>
+                    <li>let num = Number('5'); // num will be 5 (number)</li>
+                </ul>
+            </li><br>
+        </ul>
+    </p>
+    <hr>
+
+    <p>
+        Operators in JavaScript: <br>
+        <ul>
+            <li>Arithmetic Operators: +, -, *, /, %, ++, --</li><br>
+            <li>Assignment Operators: =, +=, -=, *=, /=, %=
+                <ul>
+                    <li>Example:</li>
+                    <li>let x = 10;</li>
+                    <li>x += 5; // x is now 15</li>
+                </ul>
+            </li><br>
+            <li>Comparison Operators: ==, ===, !=, !==, >, <, >=, <=</li><br>
+            <li>Logical Operators: && (AND), || (OR), ! (NOT)</li><br>
+            <li>Bitwise Operators: &, |, ^, ~, <<, >>, >>></li><br>
+            <li>Ternary Operator: condition ? expression1 : expression2</li><br>
+            <li>String Operators: + (concatenation) </li>
+        </ul>
+    </p>
+    <hr>
+
+    <p>
+        Control statements in JavaScript are commands that alter the normal sequential flow of program execution, allowing the code to make decisions, repeat tasks, and jump between different parts of a program based on specific conditions. They are typically categorized into three main types:
+        <ol>
+            <li>Conditional Statements
+                <p>These statements allow the program to make decisions and execute specific blocks of code only if a condition or set of conditions is true.</p>
+                <ul>
+                    <li>if statement: Executes a code block if a specified condition evaluates to true.
+                        <ul><li>if (condition) { // Code to execute if condition is true }</li></ul>
+                    </li><br>
+                    <li>if...else statement: Executes one block of code if the condition is true, and another block if it is false.
+                        <ul><li>if (condition) { // Code for true condition } else { // Code for false condition }</li></ul>
+                    </li><br>
+                    <li>else if statement: Used to specify a new condition to test if the previous if or else if conditions are false.
+                        <ul><li>Multiple else if statements can be chained together</li></ul>
+                    </li><br>
+                    <li>switch statement: Evaluates an expression once and compares its value against a series of case labels.
+                        <ul><li>Often a cleaner alternative to long if...else if chains</li></ul>
+                    </li><br>
+                    <li>Ternary operator (?:): A shorthand for a simple if...else statement.
+                        <ul><li>let result = (condition) ? "Value if True" : "Value if False";</li></ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li>Iterative Statements (Loops)
+                <p>These statements are used to repeatedly execute a block of code as long as a specified condition remains true.</p>
+                <ul>
+                    <li>for loop: Repeats a code block a specific number of times
+                        <ul><li>for (initialization; condition; increment/decrement) { // Code to execute repeatedly }</li></ul>
+                    </li><br>
+                    <li>while loop: Executes a code block as long as a condition is true
+                        <ul><li>while (condition) { // Code to execute repeatedly }</li></ul>
+                    </li><br>
+                    <li>do...while loop: Executes a code block at least once before checking the condition
+                        <ul><li>do { // Code to execute } while (condition);</li></ul>
+                    </li><br>
+                    <li>for...in loop: Iterates over the properties of an object
+                        <ul><li>for (let key in object) { // Code to execute }</li></ul>
+                    </li><br>
+                    <li>for...of loop: Iterates over iterable objects like arrays or strings
+                        <ul><li>for (let value of iterable) { // Code to execute }</li></ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li>Jump Statements
+                <p>These statements change the flow of execution within loops or functions.</p>
+                <ul>
+                    <li>break: Exits the current loop or switch statement</li><br>
+                    <li>continue: Skips the current loop iteration and proceeds to the next</li><br>
+                    <li>return: Exits a function, optionally returning a value</li><br>
+                    <li>throw: Creates a user-defined exception</li>
+                </ul>
+            </li>
+        </ol>
+    </p>
+    <hr>
+
+    <p> 
+        All Events in JavaScript : <br>
+        <ul>
+            <li>Mouse Events: click, dblclick, mouseover, mouseout, mousemove, mousedown, mouseup
+                <ul>
+                    <li>click: Triggered when an element is clicked - onclick()</li>
+                    <li>dblclick: Triggered when an element is double-clicked - ondblclick()</li>
+                    <li>mouseover: Triggered when the mouse pointer moves over an element - onmouseover()</li>
+                    <li>mouseout: Triggered when the mouse pointer moves out of an element - onmouseout()</li>
+                    <li>mousemove: Triggered when the mouse pointer moves within an element - onmousemove()</li>
+                    <li>mousedown: Triggered when a mouse button is pressed down on an element - onmousedown()</li>
+                    <li>mouseup: Triggered when a mouse button is released over an element - onmouseup()</li>
+                </ul>
+            </li><br>
+            <li>Keyboard Events: keydown, keyup, keypress
+                <ul>
+                    <li>keydown: Triggered when a key is pressed down - onkeydown()</li>
+                    <li>keyup: Triggered when a key is released - onkeyup()</li>
+                    <li>keypress: Triggered when a key is pressed and released (deprecated) - onkeypress()</li>
+                </ul>
+            </li><br>
+            <li>Form Events: submit, change, focus, blur, input
+                <ul>
+                    <li>submit: Triggered when a form is submitted - onsubmit()</li>
+                    <li>change: Triggered when the value of an input element changes - onchange()</li>
+                    <li>focus: Triggered when an element gains focus - onfocus()</li>
+                    <li>blur: Triggered when an element loses focus - onblur()</li>
+                    <li>input: Triggered when the value of an input element is changed - oninput()</li>
+                </ul>
+            </li><br>
+            <li>Window Events: load, unload, resize, scroll
+                <ul>
+                    <li>load: Triggered when the entire page has loaded - onload()</li>
+                    <li>unload: Triggered when the user leaves the page - onunload()</li>
+                    <li>resize: Triggered when the window is resized - onresize()</li>
+                    <li>scroll: Triggered when the user scrolls the page - onscroll()</li>
+                </ul>
+            </li><br>
+            <li>Clipboard Events: copy, cut, paste
+                <ul>
+                    <li>copy: Triggered when content is copied to the clipboard - oncopy()</li>
+                    <li>cut: Triggered when content is cut to the clipboard - oncut()</li>
+                    <li>paste: Triggered when content is pasted from the clipboard - onpaste()</li>
+                </ul>
+            </li><br>
+            <li>Drag and Drop Events: dragstart, dragover, drop
+                <ul>
+                    <li>dragstart: Triggered when the user starts dragging an element - ondragstart()</li>
+                    <li>dragover: Triggered when a dragged element is over a drop target - ondragover()</li>
+                    <li>drop: Triggered when a dragged element is dropped on a drop target - ondrop()</li>
+                </ul>
+            </li><br>
+            <li>Touch Events: touchstart, touchmove, touchend
+                <ul>
+                    <li>touchstart: Triggered when a touch point is placed on the touch surface - ontouchstart()</li>
+                    <li>touchmove: Triggered when a touch point is moved along the touch surface - ontouchmove()</li>
+                    <li>touchend: Triggered when a touch point is removed from the touch surface - ontouchend()</li>
+                </ul>
+            </li><br>
+            <li>Media Events: play, pause, ended
+                <ul>
+                    <li>play: Triggered when media starts playing - onplay()</li>
+                    <li>pause: Triggered when media is paused - onpause()</li>
+                    <li>ended: Triggered when media playback ends - onended()</li>
+                </ul>
+            </li><br>
+            <li>Other Events: error, contextmenu
+                <ul>
+                    <li>error: Triggered when an error occurs while loading an external file - onerror()</li>
+                    <li>contextmenu: Triggered when the context menu is opened (right-click) - oncontextmenu()</li>
+                </ul>
+            </li>
+        </ul>           
+    </p>
+    <hr>
+
+    <p>
+        Functions in JavaScript: <br>
+        <ul>
+            <li>Function Declaration: A named function that can be called before its definition due to hoisting.
+                <ul>
+                    <li>Example:</li>
+                    <li>function greet() {</li>
+                    <li>&nbsp;&nbsp;console.log("Hello, World!");</li>
+                    <li>}</li>
+                </ul>
+            </li><br>
+            <li>Function Expression: An anonymous function assigned to a variable. It cannot be called before its definition.
+                <ul>
+                    <li>Example:</li>
+                    <li>const greet = function() {</li>
+                    <li>&nbsp;&nbsp;console.log("Hello, World!");</li>
+                    <li>};</li>
+                </ul>
+            </li><br>
+            <li>Arrow Function: A shorter syntax for writing functions, introduced in ES6. It does not have its own 'this' context.
+                <ul>
+                    <li>Example:</li>
+                    <li>const greet = () => {</li>
+                    <li>&nbsp;&nbsp;console.log("Hello, World!");</li>
+                    <li>};</li>
+                </ul>
+            </li><br>
+        </ul>
+    </p>
+    <hr>
+
+    <p>
+        Maps in JavaScript: <br>
+        <ul>
+            <li>Map is a built-in object that allows you to store key-value pairs where keys can be of any data type.</li><br>
+            <li>Creating a Map:
+                <ul>
+                    <li>const myMap = new Map();</li>
+                </ul>
+            </li><br>
+            <li>Adding Key-Value Pairs:
+                <ul>
+                    <li>myMap.set('key1', 'value1');</li>
+                    <li>myMap.set(2, 'value2');</li>
+                </ul>
+            </li><br>
+            <li>Accessing Values:
+                <ul>
+                    <li>const value1 = myMap.get('key1'); // 'value1'</li>
+                </ul>
+            </li><br>
+            <li>Checking Existence of a Key:
+                <ul>
+                    <li>const hasKey = myMap.has('key1'); // true</li>
+                </ul>
+            </li><br>
+            <li>Removing Key-Value Pairs:
+                <ul>
+                    <li>myMap.delete('key1');</li>
+                </ul>
+            </li><br>
+            <li>Getting Size of the Map:
+                <ul>
+                    <li>const size = myMap.size; // Number of key-value pairs</li>
+                </ul>
+            </li><br>
+            <li>Iterating Over a Map:
+                <ul>
+                    <li>for (let [key, value] of myMap) {</li>
+                    <li>&nbsp;&nbsp;console.log(key, value);</li>
+                    <li>}</li>
+                </ul>
+            </li>   
+        </ul>
+    </p>
+    <hr>
+
+    <p>
+        Set  in JavaScript: <br>
+        <ul>
+            <li>Set is a built-in object that allows you to store unique values of any data type.</li><br>
+            <li>Creating a Set:
+                <ul>
+                    <li>const mySet = new Set();</li>
+                </ul>
+            </li><br>
+            <li>Adding Values:
+                <ul>
+                    <li>mySet.add(1);</li>
+                    <li>mySet.add('Hello');</li>
+                </ul>
+            </li><br>
+            <li>Checking Existence of a Value:
+                <ul>
+                    <li>const hasValue = mySet.has(1); // true</li>
+                </ul>
+            </li><br>
+            <li>Removing Values:
+                <ul>
+                    <li>mySet.delete(1);</li>
+                </ul>
+            </li><br>
+            <li>Getting Size of the Set:
+                <ul>
+                    <li>const size = mySet.size; // Number of unique values</li>
+                </ul>
+            </li><br>
+            <li>Iterating Over a Set:
+                <ul>
+                    <li>for (let value of mySet) {</li>
+                    <li>&nbsp;&nbsp;console.log(value);</li>
+                    <li>}</li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+    <hr>
+
+    <p>
+        Regex, Search, and Replace in JavaScript: <br>
+        <ul>
+            <li>Regular Expressions (Regex): Patterns used to match character combinations in strings.
+                <ul>
+                    <li>Creating a Regex:
+                        <ul>
+                            <li>const regex = /pattern/flags;</li>
+                            <li>or</li>
+                            <li>const regex = new RegExp('pattern', 'flags');</li>
+                                <ul>
+                                    <li>const regex = /hello/i; // case-insensitive match for "hello"</li>
+                                </ul>
+                        </ul>
+                    </li><br>
+                    <li>Common Flags:
+                        <ul>
+                            <li>g: global search ,Example: /hello/g </li>
+                            <li>i: case-insensitive search ,Example: /hello/i </li>
+                            <li>m: multi-line search ,Example: /hello/m </li>
+                            <li>d: generate indices for substring matches ,Example: /hello/d </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li>
+                Regular Expression patterns: uses method - .match(), .test(), .search(), .replace(), .replaceAll()
+                 Common Patterns:
+                <ul>
+                    <li>. : Matches any single character except newline</li>
+                    <li>\d : Matches any digit (0-9)</li>
+                    <li>\D : Matches any non-digit character</li>
+                    <li>\w : Matches any word character (alphanumeric + underscore)</li>
+                    <li>\W : Matches any non-word character</li>
+                    <li>\s : Matches any whitespace character (spaces, tabs, line breaks)</li>
+                    <li>\S : Matches any non-whitespace character</li>
+                    <li>^ : Matches the start of a string</li>
+                    <li>$ : Matches the end of a string</li>
+                    <li>* : Matches 0 or more occurrences of the preceding element</li>
+                    <li>+ : Matches 1 or more occurrences of the preceding element</li>
+                    <li>? : Matches 0 or 1 occurrence of the preceding element</li>
+                    <li>{n} : Matches exactly n occurrences of the preceding element</li>
+                    <li>{n,} : Matches n or more occurrences of the preceding element</li>
+                    <li>{n,m} : Matches between n and m occurrences of the preceding element</li>
+                    <li>[abc] : Matches any one of the characters a, b, or c</li>
+                    <li>[^abc] : Matches any character except a, b, or c</li>
+                    <li>(...) : Groups multiple tokens together and creates a capture group</li>    
+                </ul><br>
+            </li>
+            <li>Searching Strings:
+                <ul>
+                    <li>Using test() method:
+                        <ul>
+                            <li>const result = regex.test(string); // returns true or false</li>
+                        </ul>
+                    </li><br>
+                    <li>Using match() method:
+                        <ul>
+                            <li>const matches = string.match(regex); // returns an array of matches or null</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>Using search() method:
+                        <ul>
+                            <li>const index = string.search(regex); // returns the index of the first match or -1</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li>Replacing Substrings:
+                <ul>
+                    <li>Using replace() method:
+                        <ul>
+                            <li>const newString = string.replace(regex, 'replacement');</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>Using replaceAll() method:
+                        <ul>
+                            <li>const newString = string.replaceAll(regex, 'replacement');</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    </p>
+    <hr>
+
+    <p>
+        Sychronous, Asynchronous, Promises, Async/Await with all methods and examples in JavaScript: <br>
+        <ul>
+            <li>Synchronous JavaScript:
+                <ul>
+                    <li>Code is executed line by line, blocking further execution until the current operation completes.</li>
+                    <li>Example:
+                        <ul>
+                            <li>console.log("Start");</li>
+                            <li>console.log("Middle");</li>
+                            <li>console.log("End");</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li>Asynchronous JavaScript:
+                <ul>
+                    <li>Code can execute without blocking the main thread, allowing other operations to run concurrently.</li>
+                    <li>Example using setTimeout:
+                        <ul>
+                            <li>console.log("Start");</li>
+                            <li>setTimeout(() => { console.log("Middle"); }, 1000);</li>
+                            <li>console.log("End");</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li>Promises:
+                <ul>
+                    <li>A Promise represents a value that may be available now, in the future, or never.</li>
+                    <li>Example:
+                        <ul>
+                            <li>const myPromise = new Promise((resolve, reject) => {</li>
+                            <li>&nbsp;&nbsp;setTimeout(() => { resolve("Promise resolved!"); }, 1000);</li>
+                            <li>});</li>
+                            <li>myPromise.then(value => console.log(value));</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li>Async/Await:
+                <ul>
+                    <li>A syntactic sugar built on Promises that allows writing asynchronous code in a synchronous manner.</li>
+                    <li>Example:
+                        <ul>
+                            <li>async function fetchData() {</li>
+                            <li>&nbsp;&nbsp;const response = await fetch('https://api.example.com/data');</li>
+                            <li>&nbsp;&nbsp;const data = await response.json();</li>
+                            <li>&nbsp;&nbsp;console.log(data);</li>
+                            <li>}</li>
+                            <li>fetchData();</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    </p>
+    <hr>
+
+   </div>
+
+   <button onclick="hideComments()">Click to hide Commented text</button> <br><br>
+
+    <div id="programs">
+        <hr>
+        <h2>JavaScript Programs</h2>
+
+        <!-- Program 1 -->
+        <p><strong>1. Number Greater Than 10:</strong> Check if a number is greater than 10. Print "Greater than 10" or "10 or less."</p>
+        <input type="number" id="prog1Input" placeholder="Enter a number">
+        <button onclick="program1()">Check</button>
+        <p id="prog1Output"></p>
+        <hr>
+
+        <!-- Program 2 -->
+        <p><strong>2. Even or Odd:</strong> Check if a number is even or odd using an if-else statement.</p>
+        <input type="number" id="prog2Input" placeholder="Enter a number">
+        <button onclick="program2()">Check</button>
+        <p id="prog2Output"></p>
+        <hr>
+
+        <!-- Program 3 -->
+        <p><strong>3. Positive, Negative, or Zero:</strong> Check if a number is positive, negative, or zero and print the message.</p>
+        <input type="number" id="prog3Input" placeholder="Enter a number">
+        <button onclick="program3()">Check</button>
+        <p id="prog3Output"></p>
+        <hr>
+
+        <!-- Program 4 -->
+        <p><strong>4. Password Verification:</strong> Check if entered password is "admin123." Print "Login successful" or "Incorrect password."</p>
+        <input type="password" id="prog4Input" placeholder="Enter password">
+        <button onclick="program4()">Login</button>
+        <p id="prog4Output"></p>
+        <hr>
+
+        <!-- Program 5 -->
+        <p><strong>5. Student Grade:</strong> Enter a score (0-100) and get grade: A (90+), B (80-89), C (70-79), F (below 70).</p>
+        <input type="number" min="0" max="100" id="prog5Input" placeholder="Enter score (0-100)">
+        <button onclick="program5()">Get Grade</button>
+        <p id="prog5Output"></p>
+        <hr>
+
+        <!-- Program 6 -->
+        <p><strong>6. Voting Eligibility:</strong> Check if a person is eligible to vote (age 18 or above).</p>
+        <input type="number" id="prog6Input" placeholder="Enter age">
+        <button onclick="program6()">Check</button>
+        <p id="prog6Output"></p>
+        <hr>
+
+        <!-- Program 7 -->
+        <p><strong>7. Larger Number:</strong> Enter two numbers and find the larger one. If equal, print "Both numbers are equal."</p>
+        <input type="number" id="prog7Input1" placeholder="Enter first number">
+        <input type="number" id="prog7Input2" placeholder="Enter second number">
+        <button onclick="program7()">Compare</button>
+        <p id="prog7Output"></p>
+        <hr>
+
+        <!-- Program 8 -->
+        <p><strong>8. Leap Year:</strong> Check if a given year is a leap year (divisible by 4, but not by 100 unless also divisible by 400).</p>
+        <input type="number" id="prog8Input" placeholder="Enter year">
+        <button onclick="program8()">Check</button>
+        <p id="prog8Output"></p>
+        <hr>
+
+        <!-- Program 9 -->
+        <p><strong>9. Vowel or Consonant:</strong> Check if a given character is a vowel (a, e, i, o, u) or a consonant.</p>
+        <input type="text" id="prog9Input" placeholder="Enter a character" maxlength="1">
+        <button onclick="program9()">Check</button>
+        <p id="prog9Output"></p>
+        <hr>
+
+        <!-- Program 10 -->
+        <p><strong>10. Discount Calculator:</strong> Store offers 10% discount if total bill is greater than $100. Calculate final amount.</p>
+        <input type="number" id="prog10Input" placeholder="Enter bill amount ($)">
+        <button onclick="program10()">Calculate</button>
+        <p id="prog10Output"></p>
+        <hr>
+
+        <!-- program 11 -->
+         <p><strong>11. Print statements using for loop</strong></p>
+        <input type="number" id="prog11Input" placeholder="Enter number of times to print">
+        <button onclick="program11()">Print</button>
+        <p id="prog11Output"></p>
+        <hr>
+    </div>
+
+    
+    <div id="objectDisplay">
+        <p>Displaying the object using object.entries method</p>
+        <button onclick="displayObject()">Display Object</button>
+        <pre id="objectOutput"></pre>
+        <div id="obj1hide" style="display: none;">
+            <button onclick="hideObject()">Hide Object</button>
+        </div>
+    </div>
+
+    <hr>
+    <div id="customObject">
+        <p>Create your own object: Input your first, last name, phone no., age, gender, profession</p>
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="text" id="phoneNo" placeholder="Phone No.">
+        <input type="number" id="age" placeholder="Age">
+        <input type="text" id="gender" placeholder="Gender">
+        <input type="text" id="profession" placeholder="Profession">
+        <button onclick="createCustomObject()">Create Object</button>
+        <pre id="customObjectOutput"></pre>
+        <div id="customObjectRecreate" style="display: none;">
+            <button onclick="recreateCustomObject()">Recreate Object</button>
+        </div>
+    </div>
+
+    <hr>
+    <button onclick="document.getElementById('currentTime').innerHTML = new Date()">Click here to see current time</button>
+    <p id="currentTime"></p>
+    <hr>
+
+    <div id="demopromise">
+        <!-- buid a interactive demo of promise, asyn, settimeout that trigger on button -->
+        <h2>Interactive Demo: Promises, Async/Await, and setTimeout</h2>
+        <button onclick="runPromiseDemo()">Run Promise Demo</button>
+        <div id="demopromiseoutput"></div>
+    </div>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

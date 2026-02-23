@@ -17,6 +17,9 @@ desktop.ini
 .project
 .settings/
 
+#Resoure files
+resources/
+
 # Node modules (if you add Node.js later)
 node_modules/
 npm-debug.log*
@@ -54,3 +57,8 @@ temp/
 *.mov
 *.avi
 *.wmv
+
+
+*.pptx
+PRESENTATION_FINAL.md
+training_learned.json

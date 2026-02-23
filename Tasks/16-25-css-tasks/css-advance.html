@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        .list li::after{
+            content: "✓";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: lightgray;
+            color: green;
+            font-size: 12px;
+            text-align: center;
+            margin-left: 5px;
+        }
+
+        .list ol li::before{
+            content: '';
+            display: inline-block;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 40px;
+            left: -33px;
+            top: 15px;
+        }
+
+        .list ol li{
+            
+            border: 2px solid black;
+        }
+
+        ::marker{
+            color: red;
+            font-size: 20px;
+        }
+
+        ::selection{
+            background-color: yellow;
+            color: red;
+        }
+
+        /* Original mask - image appears in logo (white = visible) */
+        .mask1{
+            width: 500px;
+            height: 300px;
+            mask-image: url(/image.png);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-position: center;
+        }
+
+        /* Inverted mask - image appears in background (logo is cut out) */
+        .mask2{
+            width: 500px;
+            height: 300px;
+            mask-image: url(/image-1.png);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-position: center;
+        }
+
+        /* Convert image-1.png to work like image.png by INVERTING the mask */
+        .mask2-inverted{
+            width: 500px;
+            height: 300px;
+            mask-image: url(/image-2.png);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-position: center;
+            /* This inverts the mask - now logo becomes visible, background hidden */
+            /* filter: invert(); */
+        }
+
+        /* Alternative: Use composite mode to invert */
+        .mask2-composite{
+            width: 500px;
+            height: 300px;
+            mask-image: url(/image-2.png);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-position: center;
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .demo-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .demo-item {
+            border: 2px solid #ccc;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .demo-item h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .demo-item p {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ol>
+
+        <ul>    
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </div>
+
+    <hr>
+    
+    <div class="demo-container">
+        <h2>CSS Masking Examples</h2>
+
+        <div class="demo-item">
+            <h3>1. image.png - Image appears ONLY in logo (Standard Mask)</h3>
+            <p>White areas in mask = Visible | Transparent/Black = Hidden</p>
+            <img src="/red-stripped-arrow-4k-8w.jpg" alt="" class="mask1">
+        </div>
+
+        <div class="demo-item">
+            <h3>2. image-1.png - Image appears in BACKGROUND (Inverted Mask)</h3>
+            <p>Transparent logo cuts out the image, white background shows image</p>
+            <img src="/red-stripped-arrow-4k-8w.jpg" alt="" class="mask2">
+        </div>
+
+        <div class="demo-item">
+            <h3>3. image-1.png with filter: invert(1) - Now works like image.png!</h3>
+            <p>Using CSS filter to invert the mask - logo becomes visible area</p>
+            <img src="/red-stripped-arrow-4k-8w.jpg" alt="" class="mask2-inverted">
+        </div>
+
+        <div class="demo-item">
+            <h3>How to create image.png from logo.png:</h3>
+            <p><strong>Step 1:</strong> Open logo.png in an image editor (Photoshop, GIMP, Photopea)<br>
+            <strong>Step 2:</strong> Make sure background is transparent (delete white background)<br>
+            <strong>Step 3:</strong> Make the logo WHITE color<br>
+            <strong>Step 4:</strong> Save as PNG with transparency<br>
+            <strong>Result:</strong> White logo on transparent = image shows ONLY in logo</p>
+            
+            <p style="margin-top: 15px;"><strong>OR use CSS filter: invert(1)</strong> on image-1.png to get the same effect!</p>
+        </div>
+    </div>
+</body>
+</html>

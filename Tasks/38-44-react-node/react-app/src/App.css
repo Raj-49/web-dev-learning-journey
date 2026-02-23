@@ -1,0 +1,103 @@
+/* App Layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: #1e1b4b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.sidebar-header {
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-header h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.sidebar-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #a5b4fc;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  flex: 1;
+}
+
+.sidebar ul li {
+  margin: 2px 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+  color: #c7d2fe;
+  text-decoration: none;
+  font-size: 13px;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.07);
+  color: white;
+}
+
+.nav-link.active {
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border-left: 3px solid #818cf8;
+}
+
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 12px;
+  color: #a5b4fc;
+}
+
+.sidebar-footer code {
+  background: rgba(255,255,255,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background: #f9fafb;
+  overflow-y: auto;
+}
+
+/* Global resets */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #4f46e5;
+}
