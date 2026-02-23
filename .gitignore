@@ -38,7 +38,7 @@ logs/
 .env.*.local
 
 # Build outputs
-dist/
+
 build/
 *.min.js
 *.min.css
